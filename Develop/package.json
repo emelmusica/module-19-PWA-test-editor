@@ -9,7 +9,13 @@
     "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
     "install": "cd server && npm i && cd ../client && npm i",
-    "client": "cd client && npm start"
+    "client": "cd client && npm start",
+    "build:client": "cd client && webpack --config webpack.config.js",
+    "start:client": "cd client && webpack serve --config webpack.config.js --open",
+    "build:service-worker": "cd client && workbox generateSW workbox-config.js",
+    "dev:client": "cd client && webpack serve --config webpack.config.js --open",
+    "build:babel": "cd client && webpack --config webpack.config.js --env development", 
+    "build:css": "cd client && webpack --config webpack.config.js --env production"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +26,9 @@
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack": "^5.0.0", 
+    "webpack-cli": "^4.0.0", 
+    "webpack-dev-server": "^4.0.0"
   }
 }

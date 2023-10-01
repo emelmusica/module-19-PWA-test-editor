@@ -10,8 +10,8 @@ module.exports = () => {
   return {
     mode: 'development',
     entry: {
-      main: './src/js/index.js',
-      install: './src/js/install.js',
+      main: 'Develop/client/src/js/index.js',
+      install: 'Develop/client/src/js/install.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -37,8 +37,8 @@ module.exports = () => {
         ],
       }),
       new InjectManifest({
-        swSrc: './src/service-worker.js',
-        swDest: 'service-worker.js',
+        swSrc: 'Develop/client/src-sw.js',
+        swDest: 'src-sw.js',
       }),
     ],
     module: {
